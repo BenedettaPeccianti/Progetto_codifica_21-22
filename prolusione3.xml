@@ -1,0 +1,1075 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+
+<?xml-stylesheet type="testo/xsl" href="style.xsl"?>
+
+<!-- schema xml Tei all'url https://tei-c.org/Vault/P5/4.4.0/xml/tei/schema/dtd/-->
+<!DOCTYPE TEI SYSTEM "tei_all.dtd">
+<!--prologo in cui si trova l'url della dtd-->
+
+<!--contiene tutto il documento -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <!-- il tag tei header ha 5 parti principali, fornisce informazioni descrittive di un frontespizio elettronico-->
+    <teiHeader>
+    <!-- la prima parte che contiene la descrizione del file stesso e non del testo originale-->
+        <fileDesc>
+        <!--title statemennts -->
+            <titleStmt>
+            <!--titolo della risorsa, il main è quello principale e alt quello tradotto-->
+                <title xml:lang="fr" type="main">Prolusions à l'Université de Genève, les trois premières conférences</title>
+                <title xml:lang="it" type="alt">Prolusioni all'Università di ginevra, le prime tre conferenze</title>
+                <author  ref="#FDS">Ferdinand de Saussure</author>
+                <editor ref="#EF">Emanuele Fadda</editor>
+                <principal>
+                    <name ref="Bou">Bouquet</name>
+                    <name ref="#Eng">Engler</name>
+                </principal>
+
+                <respStmt>
+                    <resp>Traduzione a cura di</resp>
+                    <name ref="#EF">Emanuele Fadda</name>
+                </respStmt>
+            </titleStmt>
+
+            <!--riguarda le informazioni di un edizione di testo e è l'header di edition-->
+            <editionStmt>
+                <!--termine per indicare la nuova edizione prodotta, ovvero machine readable-->
+                <edition>
+                Edizione digitale di <date when="08-2022">settembre 2022</date>
+                </edition>
+
+                <!--informazioni a proposito della risorsa-->
+                <respStmt>
+                    <resp>Il progetto è a cura di:</resp>
+                    <name xml:id = "AMG"> Angelo Mario Del Grosso </name>
+                </respStmt>
+                <respStmt>
+                    <resp> Il progetto è realizzato da:</resp>
+                    <name xml:id="MT"> Martina Tazzini</name>
+                    <name xml:id ="BP"> Benedetta Peccianti</name>
+                    
+                </respStmt>
+            </editionStmt>
+
+            <!--info sulla pubblicazione-->
+            <publicationStmt>
+                <publisher>Università di Pisa</publisher>
+                <pubPlace ref="#PI">Pisa</pubPlace>
+                <availability status="free"> 
+                    <p>Il testo è disponile, perché di dominio pubblico</p>
+                </availability>
+                <date when="8 settembre 2022">8 settembre 2022</date>
+            </publicationStmt>
+
+            <!--descrizione della fonte dalla quale è tratto il testo da codificare con il tag che riguarda il manoscritto-->
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                    <!--elementi che fanno parte dell'identificatore del manoscritto, per identificarlo-->
+                        <placeName>
+                            <country xml:id="SV"> Svizzera </country>
+                            <!--specifica della città-->
+                            <settlement ref="#GE"> Ginevra</settlement>
+                        </placeName>
+                        <institution> Manoscritti e archivio privato</institution>
+                        <!-- dove è conservato il manoscritto-->
+                        <repository>Biblioteca di Ginevra</repository>
+                        <!--numero identificatore dell'oggetto un'unità bibliografica-->
+                        <idno>BGE Ms. fr. 3951/1.1-3</idno>
+                    </msIdentifier>
+                    
+                    <!--contenuto intellettuale del manoscritto-->
+                    <msContents>
+                        <!--parte di manoscritto che ne descrive il contenuto intellettuale -->
+                        <msItem>
+                            <docAuthor ref="#FDS"> Ferdinand de Saussure</docAuthor>
+                            <title xml:lang="fr" type="main">Phonétique du grec et du latin </title>
+                            <!--data del documento nel frontespizio in cui whem è opzionale-->
+                            <docImprint> <pubPlace ref="#GE">Ginevra</pubPlace>,<docDate>Novembre 1891</docDate></docImprint>
+                            <textLang mainLang="fr"> Il manoscritto è in francese e la traduzione in italiano</textLang>
+                        </msItem>
+                    </msContents>
+
+                    <!-- in cui si trova la descrizione della grandezza del documento sempre nel modulo descrizione manoscritto-->
+                    <physDesc>
+                        <!--sarebbe possibile aggiungere le info che sono già in msDesc-->
+                        <!--si compone della descrizione del supporto e layout-->
+                        <objectDesc form="leaf"> 
+                            <supportDesc material="paper" source="https://archives.bge-geneve.ch/ark:/17786/vtae78f994bf3242bef">
+                                <support>Fogli di carta.</support>
+                                <!--descrive la grandezza del documento è un altro elemento che si può trovare in file description-->
+                                <extent>
+                                    <measureGrp unit="pages">
+                                        <measure quantity="30">30 +</measure>
+                                        <measure quantity="15">15 +</measure>
+                                        <measure quantity="22">22 pagine +</measure>
+                                        <measure quantity="1">1 foglietto.</measure>
+                                    </measureGrp> 
+                                </extent>
+                                <condition> 
+                                    <p>Il testo presenta correzioni, cancellature e aggiunte, ma lo stato è buono.</p>
+                                </condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="1" ruledLines="20 30">
+                                    <p>Le pagine sono lunghe in media tra le 20 e 30 righe </p>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+
+                        <!--fa sempre parte della descrizione fisica del documento-->
+                        <!--descrizione dei diversi tipi di scrittura del testo, in questo caso l'attributo ha come valore 1-->
+                        <handDesc hands="1">
+                            <p> Le pagine all'interno del taccuino sono state scritte a mano da <persName ref="#FDS">Ferdinand De Saussure.</persName></p>
+                        </handDesc>
+                        <!--utlizzato per fornire informazioni sulla stampa della risorsa-->
+                        <typeDesc> 
+                            <!-- o da mettere summary-->
+                            <p>Lo stile utilizzato dall'autore è il corsivo, visivamente molto inclinato verso destra 
+                            che quindi rende la lettura difficile </p>
+                        </typeDesc>
+                    </physDesc>
+
+                    <!--storia del manoscritto-->
+                    <history>
+                        <origin>Lezioni introduttive delle prime tre conferenze a <origPlace ref="#GE"> Ginevra</origPlace>, per il corso di 
+                            <title xml:lang="fr">Phonétique du grec et du latin</title> nel <date when="1891">novembre 1981</date>. 
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        
+        <!-- descrizione non bibliografica del testo-->
+        <profileDesc>
+            <langUsage>
+                <language ident="fr">French</language>
+            </langUsage>
+            <textDesc> 
+                <!--canale di trasmissione del testo come scritto sotto scritto/parlato-->
+                <!--al posto di ws anche sono w perché alla fine è scritto-->
+                <channel mode="ws" /> 
+                <!--si tratta di un unico testo completo-->
+                <constitution type="single"/>
+                <derivation type="original" />
+                <domain type="education"/>
+                <!--il testo parla di fatti ed è informativo-->
+                <factuality type="fact" />
+                <!--il tipo di interazione "type" potrebbe essere anche partial -->
+                <interaction type="none" active="singular" passive="group" />
+             
+                <preparedness type="draft" />
+                <!--si può aggiungere degree come attributo-->
+                <purpose type="inform" />
+            </textDesc>
+            
+            <settingDesc>
+                <!--descrive l'ambientazione dell'interazione-->
+                <setting>
+                    <date when="13-11-1981">13-11-1981</date>
+                    <name>Testo per la biblioteca di <placeName ref="#GE">Ginevra</placeName></name>
+                </setting>
+            </settingDesc>
+        </profileDesc>
+    </teiHeader>
+    
+    <!--codifica digitale di una risorsa primaria per creare un facsimile di una fonte
+    scritta ma sotto forma di immagini. questo tag può affiancare o sostituire Text-->
+    <facsimile>
+        <surface n="1" xml:id="prolusioni3_21">
+            <graphic url='prolusioni3_21.jpg' width='2584px' height='3852px' />
+
+            <zone ulx="164" uly="99" lrx="2422" lry="3721" xml:id="P21_paginaIntera" />
+
+            <zone ulx="707" uly="195" lrx="2282" lry="346" xml:id="P21_riga1" />
+            <zone ulx="683" uly="322" lrx="2219" lry="486" xml:id="P21_riga2" />
+            <zone ulx="676" uly="462" lrx="2335" lry="612" xml:id="P21_riga3" />
+            <zone ulx="727" uly="589" lrx="2308" lry="721" xml:id="P21_riga4" />
+            <zone ulx="704" uly="717" lrx="2251" lry="858" xml:id="P21_riga5" />
+            <zone ulx="721" uly="829" lrx="2321" lry="967" xml:id="P21_riga6" />
+            <zone ulx="713" uly="955" lrx="2308" lry="1113" xml:id="P21_riga7" />
+            <zone ulx="731" uly="1098" lrx="1642" lry="1240" xml:id="P21_riga8" />
+            <zone ulx="706" uly="1178" lrx="2309" lry="1345" xml:id="P21_riga9" />
+            <zone ulx="674" uly="1310" lrx="2363" lry="1478" xml:id="P21_riga10" />
+            <zone ulx="673" uly="1441" lrx="2348" lry="1601" xml:id="P21_riga11" />
+            <zone ulx="695" uly="1570" lrx="2273" lry="1741" xml:id="P21_riga12" />
+            <zone ulx="695" uly="1688" lrx="2329" lry="1852" xml:id="P21_riga13" />
+            <zone ulx="698" uly="1838" lrx="2291" lry="1987" xml:id="P21_riga14" />
+            <zone ulx="698" uly="1975" lrx="2197" lry="2110" xml:id="P21_riga15" />
+            <zone ulx="721" uly="2080" lrx="2357" lry="2238" xml:id="P21_riga16" />
+            <zone ulx="719" uly="2200" lrx="2320" lry="2372" xml:id="P21_riga17" />
+            <zone ulx="713" uly="2324" lrx="2320" lry="2497" xml:id="P21_riga18" />
+            <zone ulx="710" uly="2467" lrx="2123" lry="2645" xml:id="P21_riga19" />
+            <zone ulx="725" uly="2624" lrx="2356" lry="2762" xml:id="P21_riga20" />
+            <zone ulx="707" uly="2770" lrx="2381" lry="2881" xml:id="P21_riga21" />
+            <zone ulx="742" uly="2875" lrx="2303" lry="3012" xml:id="P21_riga22" />
+            <zone ulx="776" uly="3003" lrx="2353" lry="3139"  xml:id="P21_riga23" />
+            <zone ulx="767" uly="3127" lrx="2379" lry="3258" xml:id="P21_riga24"/>
+            <zone ulx="788" uly="3264" lrx="2262" lry="3384" xml:id="P21_riga25"/>
+            <zone ulx="788" uly="3384" lrx="1767" lry="3484" xml:id="P21_riga26"/>
+            <zone ulx="786" uly="3528" lrx="2375" lry="3618" xml:id="P21_riga27"/>
+        </surface>
+
+        <surface n="2" xml:id="prolusioni3_vuota">
+            <graphic url="prolusioni3_vuota.jpg" width='2584px' height='3852px' />
+            <zone ulx="209" uly="176" lrx="2399" lry="3815" xml:id="P21_paginavuota"/>
+        </surface>
+
+        <surface n="3" xml:id="prolusioni3_22">
+            <graphic url="prolusioni3_22.jpg"  width='2584px' height='3852px' /> 
+
+            <zone ulx="125" uly="49" lrx="2422" lry="3710" xml:id="P22_paginaIntera" />
+
+            <zone ulx="618" uly="165" lrx="2388" lry="283" xml:id="P22_riga1" />
+            <zone ulx="608" uly="316" lrx="2372" lry="417" xml:id="P22_riga2" />
+            <zone ulx="638" uly="424" lrx="2352" lry="546" xml:id="P22_riga3" />
+            <zone ulx="653" uly="547" lrx="2387" lry="679" xml:id="P22_riga4" />
+            <zone ulx="638" uly="688" lrx="2379" lry="783"  xml:id="P22_riga5" />
+            <zone ulx="639" uly="810" lrx="2289" lry="898" xml:id="P22_riga6" />
+            <zone ulx="651" uly="940" lrx="2382" lry="1028"  xml:id="P22_riga7" />
+            <zone ulx="612" uly="1063" lrx="2340" lry="1144" xml:id="P22_riga8" />
+            <zone ulx="633" uly="1159" lrx="2303" lry="1279" xml:id="P22_riga9" />
+            <zone ulx="651" uly="1288" lrx="2064" lry="1408" xml:id="P22_riga10" />
+            <zone ulx="629" uly="1411" lrx="1844" lry="1510" xml:id="P22_riga11"/>
+            <zone ulx="692" uly="1544" lrx="2348" lry="1642" xml:id="P22_riga12" />
+            <zone ulx="629" uly="1663" lrx="2297" lry="1765" xml:id="P22_riga13" />
+            <zone ulx="665" uly="1774" lrx="2222" lry="1900" xml:id="P22_riga14" />
+            <zone ulx="375" uly="1918" lrx="1418" lry="2038" xml:id="P22_riga15" />
+            <zone ulx="741" uly="2014" lrx="1167" lry="2148" xml:id="P22_riga16"/>            
+        </surface>
+    </facsimile>
+   
+   <!--contiene un unico testo intero-->
+    <text xml:lang="fr" xml:id="prolusioni3_21-22-fr" subtype="manuscript">
+        <body>
+            <div facs="#pagina21" n="21">
+                <!-- Page Beginning = fa riferimento alla 1' pagina da codificare-->
+                <pb n="21" facs="#P21_paginaIntera" />
+                <!--blocco anonimo che contiene una parte testuale e in questo caso i paragrafi-->
+                <ab type="paragrafo" n="1" xml:id="prolusioni3_21_paragrafo1">
+                    <lb xml:id="prolusioni3_21_LB1" n="1" facs="#P21_riga1" />
+                    <!-- Line Beginning = fa riferimento alla 1' linea della 1' pagina da codificare -->
+                    Il n'y a d'autre moyen de fixer 
+                    
+                    <lb xml:id="prolusioni3_21_LB2" n="2" facs="#P21_riga2" />
+                    ce qu'on veut dire en parlant <del><gap reason="deleted" atLeast="2" unit="chars"/></del>
+                  
+                    <lb xml:id="prolusioni3_21_LB3" n="3" facs="#P21_riga3" />
+                    <del><gap reason="deleted" atLeast="2" atMost="3" unit="chars" /></del> de telle ou telle <term ref="#langue">langue</term> précise que
+
+                    <lb xml:id="prolusioni3_21_LB4" n="4" facs="#P21_riga4" />
+                    de dire <term ref="#lldreta" rend="underlined"> la langue de <del><gap reason="deleted" atLeast="4" atMost="6" unit="chars" /></del> Rome </term> <del><gap reason="deleted" atLeast="2" unit="chars" /> </del>
+
+                    <lb xml:id="prolusioni3_21_LB5" n="5" facs="#P21_riga5" />
+                    <term ref="#lldreta"> en telle année </term> ; <term ref="#lldaeta"> la langue d'Annecy</term>
+
+                    <lb xml:id="prolusioni3_21_LB6" n="6" facs="#P21_riga6" />
+                    <term ref="#lldaeta"> en telle année </term> <choice><orig>;</orig><reg resp="#EF">.</reg></choice>
+                </ab>   
+
+                <ab type="paragrafo" n="2" xml:id="prolusioni3_21_paragrafo2">
+                    <!--choice raggruppa un numero di codifiche alternative per la stessa porzione di testo-->
+                    <!--orig sta per forma originaria, lettura codificata conferme all'originale e non alla forma corretta-->
+                    <!--reg sta per regolarizzazione, cotniene la lettura regolarizzata da qualcuno-->
+                    <abbr type="suspension">c<am>.</am></abbr><expan>C<ex>'est</ex></expan> à
+                    <abbr type="suspension">d<am>.</am></abbr><expan>d<ex>ire</ex></expan> de prendre
+                    <choice><orig>1</orig><reg resp="#EF">une</reg></choice> 
+                    
+                    <lb xml:id="prolusioni3_21_LB7" n="7" facs="#P21_riga7" />
+                    seule <del><gap reason="deleted" atLeast="4" unit="chars"/></del> <term ref="#localite"> localité </term> peu étendue et <choice><orig>1</orig><reg resp="#EF">un</reg></choice>
+                    
+                    <lb xml:id="prolusioni3_21_LB8" n="8" facs="#P21_riga8" />
+                    seule <term ref="#point"> point </term> <choice><orig>ds</orig><reg resp="#EF">dans</reg></choice> le <term ref="#temps">temps</term>.
+                </ab> 
+
+                <ab type="paragrafo" n="3" xml:id="prolusioni3_21_paragrafo3">
+                    <lb xml:id="prolusioni3_21_LB9" n="9" facs="#P21_riga9" />
+                    <space dim="horizontal"/> On demande alors, après ces <term ref="#observations"><abbr type="suspension">ob<am>.</am></abbr><expan>ob<ex>servations</ex></expan></term>, si
+                    
+                    <lb xml:id="prolusioni3_21_LB10" n="10" facs="#P21_riga10" />
+                    des <term ref="#langContig"> langues contiguës</term> de même <term ref="#origine">origine</term><add resp="#EF" place="inline">,</add>
+                    
+                    <lb xml:id="prolusioni3_21_LB11" n="11" facs="#P21_riga11" />
+                    <choice><orig>come</orig><reg resp="#EF">comme</reg></choice> le <lang rend="underlined">slave</lang> et l'<lang rend="underlined">allemand</lang> <add resp="#EF" place="inline">,</add> sont reliés 
+                    
+                    <lb xml:id="prolusioni3_21_LB12" n="12" facs="#P21_riga12" />
+                    <choice><orig>come</orig><reg resp="#EF">comme</reg></choice>l' <lang><abbr type="suspension">ital<am>.</am></abbr><expan>ital<ex>ien</ex></expan></lang> &amp; le <lang>français </lang> par des <term ref="#dialint"><abbr type="suspension">dial<am>.</am></abbr><expan>dial<ex>ectes</ex></expan></term>
+
+                    <lb xml:id="prolusioni3_21_LB13" n="13" facs="#P21_riga13" />
+                    <term ref="#dialint">intermédiaires</term>, n'appartenant pas <choice><orig>+</orig><reg resp="#EF">plus</reg></choice> au <choice><orig>1er</orig><reg resp="#EF">premier</reg></choice>
+
+                    <lb xml:id="prolusioni3_21_LB14" n="14" facs="#P21_riga14" />
+                    qu'au <choice resp="#EF"><orig>2d</orig><reg resp="#EF">second</reg></choice> <term ref="#type">type</term>
+                </ab>
+
+                <ab type="paragrafo" n="4" xml:id="prolusioni3_21_paragrafo4">
+                    Non; et cela est à peu 
+                    
+                    <lb xml:id="prolusioni3_21_LB15" n="15" facs="#P21_riga15" />
+                    <!--supplied  è il tag per testo inserito dal curatore perché illeggibile o assente nell'originale-->
+                    près <term ref="#general">général</term> <supplied resp="#EF" reason="omitted-in-original">dans</supplied> la <term ref="#famille">famille</term> <lang><abbr type="suspension">indo-eur<am>.</am></abbr><expan>indo-eur<ex>opéenne</ex></expan></lang>.
+                </ab>
+
+                <ab type="paragrafo" n="5" xml:id="prolusioni3_21_paragrafo5">
+                    <lb xml:id="prolusioni3_21_LB16" n="16" facs="#P21_riga16" />
+                    Nous ne possédons plus les <term ref="#transitions">transitions</term>; mais 
+                    
+                    <lb xml:id="prolusioni3_21_LB17" n="17" facs="#P21_riga17" />
+                    il faut se rappeler que notre <term ref="#connaissance">connaissance</term>
+                    
+                    <lb xml:id="prolusioni3_21_LB18" n="18" facs="#P21_riga18" />
+                    est <abbr type="suspension">absol<am>.</am></abbr><expan>absol<ex>ument</ex></expan> <term ref="#fragmentaire">fragmentaire</term>; <supplied resp="#EF" reason="omitted-in-original">nous</supplied> ne <term ref="#connaissons"><supplied reason="illegible">connaissons</supplied></term>
+                    
+                    <lb xml:id="prolusioni3_21_LB19" n="19" facs="#P21_riga19" />
+                    <!-- tag w, word, marca una parola a livello grammaticale o lemma-->
+                    pas le <term ref="#corps">corps</term> de <term ref="#langill"><lang>langue <w rend="underlined">illyrien</w></lang></term> <choice><orig> - </orig><reg resp="#EF"> , </reg></choice>
+                    
+                    <lb xml:id="prolusioni3_21_LB20" n="20" facs="#P21_riga20" />
+                    nous ne possédons pas le <term ref="#corps">corps</term> de <term ref="#langphy"><lang><supplied resp="#EF" reason="illegible">langue</supplied> <w rend="underlined">phrygien</w></lang></term>,
+                    
+                    <lb xml:id="prolusioni3_21_LB21" n="21" facs="#P21_riga21" />
+                    ni le <term ref="#corps">corps</term> de <term ref="#langmac"><lang> <supplied resp="#EF" reason="illegible">langue</supplied> <w rend="underlined">macédonien</w></lang></term>, qui <abbr type="suspension">probab<am>.</am></abbr><expan>probab<ex>lement</ex></expan>
+                    
+                    <lb xml:id="prolusioni3_21_LB22" n="22" facs="#P21_riga22" />
+                    reliait le <lang>grec</lang> au <lang>slave</lang>; - en outre 
+
+                    <lb xml:id="prolusioni3_21_LB23" n="23" facs="#P21_riga23" />
+                    il y a eu des mouvements de <term ref="#populations">popu</term>-
+                    
+                    <lb xml:id="prolusioni3_21_LB24" n="24" facs="#P21_riga24" />
+                    = <term ref="#populations">lations</term> qui ont <term ref="#continuellement">continuellement</term> pu venir
+
+                    <lb xml:id="prolusioni3_21_LB25" n="25" facs="#P21_riga25" />
+                    battre et recouvrir de leurs vagues
+
+                    <lb xml:id="prolusioni3_21_LB26" n="26" facs="#P21_riga26" />
+                    les <term ref="#typesint">types intermédiaires.</term>
+                </ab>
+
+                <ab type="paragrafo" n="6" xml:id="prolusioni3_21_paragrafo6">
+                    <lb xml:id="prolusioni3_21_LB27" n="27" facs="#P21_riga27" /> <space dim="horizontal"/> <choice> <orig> Ns</orig> <reg resp="#EF"> Nous</reg></choice> avons <supplied resp="#EF" reason="illegible">toute</supplied> raison de croire que 
+                </ab>
+
+            </div>
+            
+            <div facs="#pagina22" n="22">
+                <pb n="22" facs="#P22_paginaIntera" />
+                <ab type="paragrafo" n="6" xml:id="prolusioni3_22_paragrafo6">
+                    <lb xml:id="prolusioni3_22_LB1" n="1" facs="#P22_riga1" />
+                    <!--continuo della pagina 21-->
+                    la <term ref="#diff"><abbr type="suspension">differenciati</abbr><expan resp="#EF">differenciati<ex>on</ex></expan></term> au sein du <choice><orig>gd</orig><reg resp="#EF">grand</reg></choice> <term ref="#corps"> corps </term> <lang> <abbr type="suspension">indo-eu<expan>indo-eu<ex>ropeén</ex></expan></abbr>indo-européen</lang>
+
+                    <lb xml:id="prolusioni3_22_LB2" n="2" facs="#P22_riga2" />
+                    s'<supplied resp="#EF" reason="illegible">est</supplied> faite <term ref="general">en général</term> de la même façon que 
+
+                    <lb xml:id="prolusioni3_22_LB3" n="3" facs="#P22_riga3" />
+                    <del rend="overstrike"> <gap reason="illegible" atLeast="17" atMost="19" unit="chars"/></del> <term ref="#diff"> la différentiation</term> <unclear reason="eccentric_ductus">de la</unclear>
+                    <!--il valore di reason "eccentric_ductus indica illeggibilità a causa di un'esecuzione insolita, goffa o incompetente di uno o più glifi"-->
+                    
+                    <lb xml:id="prolusioni3_22_LB4" n="4" facs="#P22_riga4" />
+                    <term ref="#langlat"> <lang><supplied resp="#EF" reason="illegible">langue</supplied>latine</lang></term>. À l'heure qu'il est, la <term ref="#continuite"><unclear reason="illegible">conti - </unclear></term>
+
+                    <lb xml:id="prolusioni3_22_LB5" n="5" facs="#P22_riga5" />
+                    <term ref="#continuite"> =nuité </term> est ininterrompue... en passant par
+
+                    <lb xml:id="prolusioni3_22_LB6" n="6" facs="#P22_riga6" />
+                    <name type="place">Herat,</name><name type="place">Merw,</name><name type="place"> Moscou.</name>
+                </ab>
+
+                <ab type="paragrafo" n="7" xml:id="prolusioni3_22_paragrafo7">
+                    Or, si
+                    
+                    <lb xml:id="prolusioni3_22_LB7" n="7" facs="#P22_riga7" />
+                    <choice> <orig> ns</orig> <reg resp="#EF"> nous</reg></choice> prenons les <term ref="#difflang"><abbr type="suspension">diff<am>.</am></abbr><expan>diff<ex>érentes</ex></expan> <unclear reason="illegible">langues.</unclear></term> <abbr type="suspension">indo-eu</abbr><expan>indo-eu<ex>ropeén</ex></expan><lang>indo-européens</lang>, chaucune
+                    
+                    <lb xml:id="prolusioni3_22_LB8" n="8" facs="#P22_riga8" />
+                    <term ref="#represente">représente </term> <supplied resp="#EF" reason="illegible">exactement</supplied> l'<term ref="#annint">anneau intermédiaire</term>
+
+                    <lb xml:id="prolusioni3_22_LB9" n="9" facs="#P22_riga9" />
+                    entre ses <choice><orig>2</orig><reg resp="#EF">deux</reg></choice> deux voisine <supplied resp="#EF" reason="illegible">de l'Est et de L'Ouest.</supplied>
+                </ab>
+
+                <ab type="paragrafo" n="8" xml:id="prolusioni3_22_paragrafo8">
+                    <lb xml:id="prolusioni3_22_LB10" n="10" facs="#P22_riga10" />
+                    <del rend="overstrike"> De <choice><orig> 2 </orig><reg resp="#BP"> plus</reg> </choice> qu'il ya 
+                        <gap reason="illegible" atLeast="14" atMost="18" unit="chars" />
+                    </del>
+
+                    <lb xml:id="prolusioni3_22_LB11" n="11" facs="#P22_riga11" />
+                    <del rend="overstrike"> De même qu'il y a
+                        <gap reason="illegible" atLeast="8" atMost="10" unit="chars" />
+                    </del>
+
+
+                    <lb xml:id="prolusioni3_22_LB12" n="12" facs="#P22_riga12" />
+                    <space /><del rend="overstrike" > Il y a des</del>
+                        <gap reason="illegible" atLeast="5" atMost="6" unit="chars"/>
+                    <del rend="overstrike" atLeast="4" atMost="5">commes
+                        <gap reason="illegible" atLeast="15" atMost="18" unit="chars"/>
+                    </del>
+
+                    <lb xml:id="prolusioni3_22_LB13" n="13" facs="#P22_riga13" />
+                    <del rend="overstrike"> 
+                        <gap reason="illegible" atLeast="11" atMost="14" unit="chars"/>
+                    </del>
+                    Et nous pouvons constater
+
+                    <lb xml:id="prolusioni3_22_LB14" n="14" facs="#P22_riga14" />
+                    <abbr type="suspension">cert</abbr><expan resp="#EF">cert<ex>aines</ex></expan> <choice><orig>gs</orig><reg resp="#EF">grands</reg></choice> <term ref="#phenomenes"><abbr type="suspension">phé<am>.</am></abbr><expan>phé<ex>nomènes </ex></expan></term> <choice><orig>tt</orig><reg resp="#EF">tout</reg></choice> à fait  <term ref="#analogues">analogues</term> <space dim="horizontal"/>
+                </ab>
+                
+                <ab type="paragrafo" n="9" xml:id="prolusioni3_22_paragrafo9">
+                    <lb xml:id="prolusioni3_22_LB15" n="15" facs="#P22_riga15" />
+                    <term ref="#continuite" rend="underlined"> <unclear reason="faded"> Continuité </unclear> </term> - mais <term ref="#diverg" rend="underlined"> <unclear reason="faded">divergences.</unclear></term>
+                
+                    <lb xml:id="prolusioni3_22_LB16" n="16" facs="#P22_riga16" />
+                    <term ref="#phonetique"> <abbr type="suspension">phonéti<am>.</am></abbr><expan>phonéti<ex>que</ex></expan></term>
+                </ab>
+            </div>
+
+            <!--inizio traduzione-->
+            <div type="traduzione21">
+                <ab n="1" corresp="#prolusioni3_21_paragrafo1" xml:lang="it">
+                    Non c'è altro mezzo di fissare ciò che si vuol dire parlando di questa o quella lingua precisa che dire 
+                    <!--hi tag per evidenziare che una parola è resa graficamente diversa dalle altre senza che ne sia specificata la ragione
+                    o style o rend che però serve per indicarlo nel testo di partenza-->
+                    <hi rend="italic">la lingua di Roma in quell'anno; la lingua di Annecy in quell'altro</hi>.
+                </ab>
+
+                <ab n="2" corresp="#prolusioni3_21_paragrafo2" xml:lang="it">
+                    Cioè di prendere una sola località poco estesa e un solo punto nel tempo.
+                </ab>
+
+                <ab n="3" corresp="#prolusioni3_21_paragrafo3" xml:lang="it">
+                    Ci si domanda dunque, in seguito a queste osservazioni, se lingue contigue della stessa origine, come lo slavo o il tedesco,
+                    sono legate come l'italiano e il francese da dialetti intermedi, che non appartengono al primo tipo più che al secondo.
+                </ab>
+
+                <ab n="4" corresp="#prolusioni3_21_paragrafo4" xml:lang="it">
+                    No; e tutto ciò è praticamente generale nella famiglia indoeuropea.
+                </ab>
+
+                <ab n="5" corresp="#prolusioni3_21_paragrafo5" xml:lang="it">
+                    Noi non possediamo più le transizioni; ma bisogna ricordare che la nostra conoscenza è assolutamente frammentaria:
+                    non conosciamo il nucleo centrale dell'<hi rend="italic">illirico</hi>; non possediamo il nucleo centrale del 
+                    <hi rend="italic">frigio</hi>, nè quello del 
+                    <hi rend="italic">macedone</hi>, che probabilmente
+                    collegava il greco allo slavo; inoltre ci sono movimenti di popolazioni che con continuità hanno potuto affacciarsi e ricoprire delle loro onde i tipi intermedi.
+                </ab>
+
+                <ab n="6" corresp="#prolusioni3_21_paragrafo6" xml:lang="it">
+                    Abbiamo ogni ragione di credere che 
+                </ab>
+            </div>
+
+            <div type="traduzione22">
+                <ab n="1" corresp="prolusioni3_22_paragrafo1" xml:lang="it">
+                    la differenziazione in seno al grande corpo indoeuropeo si è svolta in generale nello stesso modo della differenziazione della lingua latina.
+                    A tutto'oggi, la continuità è ininterrotta... passando per Herat, Merw, Mosca.
+                </ab>
+
+                <ab n="2" corresp="prolusioni3_22_paragrafo2" xml:lang="it">
+                    Ora, se prendiamo le differenti lingue indoeuropee, ognuna rappresenta esattamente l'anello intermedio tra le sue due vicine dell'Est e dell'Ovest.
+                </ab>
+
+                <ab n="3" corresp="prolusioni3_22_paragrafo3" xml:lang="it">
+                    E possiamo constatare certi grandi fenomeni assolutamente analoghi.
+                </ab>
+
+                <ab n="4" corresp="prolusioni3_22_paragrafo4" xml:lang="it">
+                    <hi rend="italic">Continuità</hi>, ma <hi rend="italic">divergenze.</hi>
+                </ab>
+
+                <ab n="5" corresp="prolusioni3_22_paragrafo5" xml:lang="it">
+                    <hi rend="italic">Fonetica.</hi>
+                </ab>
+           
+            </div>
+        </body>
+
+        <!--sempre dentro text serve ad indicare l'appendice dopo il testo-->
+        <back>
+            <div type="appendix">
+                <list type="terminologia">
+                    <label>
+                        <term xml:id="langue" xml:lang="fr">Langues</term>
+                        <term ref="#langue" xml:lang="it">Lingua</term>
+                    </label>
+                    <item>
+                        <!--gloss identifica una parola o un sintagma che fornisce la definizione per qualche altra parola-->
+                        <gloss target="#langue" xml:lang="it" source="https://it.wikipedia.org/wiki/Lingua">
+                            La <hi rend="bold">lingua</hi> è una forma storicamente determinata in cui si manifesta la facoltà del linguaggio.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="lldreta" xml:lang="fr">La langue de Rome en telle année</term>
+                        <term ref="#lldreta" xml:lang="it">La lingua di Roma in quell'anno</term>
+                    </label>
+                    <item>
+                        <gloss target="#lldreta" xml:lang="it" source="https://it.wikipedia.org/wiki/Lingua">
+                            <hi rend="bold">La lingua di Roma in quell'anno</hi> è un esempio fatto da Saussure in riferimento a una data lingua in un tempo e spazio.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="lldaeta" xml:lang="fr">La langue d'Annecy en telle année</term>
+                        <term ref="#lldaeta" xml:lang="it">La lingua di Annecy in quell'anno</term>
+                    </label>
+                    <item>
+                        <gloss target="#lldaeta" xml:lang="it" source="https://it.wikipedia.org/wiki/Lingua">
+                            <hi rend="bold">La lingua di Annecy in quell'anno</hi> è un esempio fatto da Saussure in riferimento a una data lingua in un tempo e spazio.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="localite" xml:lang="fr">localité</term>
+                        <term ref="#localite" xml:lang="it">località</term>
+                    </label>
+                    <item>
+                        <gloss target="#localite" xml:lang="it" source="https://www.treccani.it/vocabolario/localita/">
+                            La <hi rend="bold">località</hi> è un luogo geografico, che presenta delle caratteristiche precise.
+                        </gloss>
+                    </item>
+
+                        
+                    <label>
+                        <term xml:id="point" xml:lang="fr">point</term>
+                        <term ref="#point" xml:lang="it">punto</term>
+                    </label>
+                    <item>
+                        <gloss target="#point" xml:lang="it" source="https://it.wikipedia.org/wiki/Punto_nave">
+                            Il <hi rend="bold"> punto </hi> è un termine con molte accezioni, in questo caso sta a significare una posizione espressa mediante coordinate geografiche.
+                        </gloss>
+                    </item>
+                    
+                    <label>
+                        <term xml:id="temps" xml:lang="fr">temps</term>
+                        <term ref="#temps" xml:lang="it">tempo</term>
+                    </label>
+                    <item>
+                        <gloss target="#temps" xml:lang="it" source="https://it.wikipedia.org/wiki/Tempo">   
+                        Il <hi rend="bold"> tempo </hi> è la percezione e la successione degli eventi, si tratta di una grandezza fisica fondamentale.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="observations" xml:lang="fr">observations</term>
+                        <term ref="#observations" xml:lang="it">osservazione</term>
+                    </label>
+                        <item>
+                        <gloss target="#observations" xml:lang="it" source="https://it.wikipedia.org/wiki/Osservazione">   
+                        Acquisire nuove informazioni dall'esterno tramite gli organi di senso è detta <hi rend="bold"> osservazione </hi> 
+                        </gloss>
+                    </item>
+
+                        <label>
+                        <term xml:id="langContig" xml:lang="fr">langues continuës</term>
+                        <term ref="#langContig" xml:lang="it">lingue contigue</term>
+                    </label>
+                        <item>
+                        <gloss target="#langContig" xml:lang="it" source="https://www.treccani.it/vocabolario/contiguo/">   
+                            <hi rend="bold">Contiguo</hi> è qualcosa che confina, che è attaccato, adiacente.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="origine" xml:lang="fr">Origine</term>
+                        <term ref="#origine" xml:lang="it">Origine</term>
+                    </label>
+                        <item>
+                        <gloss target="#origine" xml:lang="it" source="https://www.treccani.it/vocabolario/contiguo/">   
+                            <hi rend="bold">Origine</hi> è l'inizio di qualcosa.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="dialint" xml:lang="fr">Dialectes intermédiaires</term>
+                        <term ref="#dialint" xml:lang="it">Dialetti intermedi</term>
+                    </label>
+                        <item>
+                        <gloss target="#dialint" xml:lang="it" source="https://it.wikipedia.org/wiki/Dialetto">   
+                            Il termine <hi rend="bold">dialetto</hi> indica, a seconda dell'uso, o una varietà di una lingua, o un idioma locale che ha perduto autonomia rispetto a un altro divenuto sociopoliticamente dominante e riconosciuto come ufficiale.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="type" xml:lang="fr">Type</term>
+                        <term ref="#type" xml:lang="it">Tipo</term>
+                    </label>
+                        <item>
+                        <gloss target="#type" xml:lang="it" source="https://it.wikipedia.org/wiki/Tipo">   
+                            Col termine <hi rend="bold">tipo</hi> si indica un modello, esemplare, che si prende come campione.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="general" xml:lang="fr">Général</term>
+                        <term ref="#general" xml:lang="it">Generale</term>
+                    </label>
+                        <item>
+                        <gloss target="#general" xml:lang="it" source="https://it.wikipedia.org/wiki/Generale">   
+                            <hi rend="bold">Generale</hi> è un aggettivo che si riferisce a qualcuno o qualcosa costituenti un insieme.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="famille" xml:lang="fr">Famille</term>
+                        <term ref="#famille" xml:lang="it">Famiglia</term>
+                    </label>
+                        <item>
+                        <gloss target="#famille" xml:lang="it" source="https://it.wikipedia.org/wiki/Famiglia">   
+                            La <hi rend="bold">famiglia</hi> l'insieme di tutte le persone, passate, presenti, future, di uno stesso sangue.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="transitions" xml:lang="fr">Transitions</term>
+                        <term ref="#transitions" xml:lang="it">Transizioni</term>
+                    </label>
+                        <item>
+                        <gloss target="#transitions" xml:lang="it" source="https://it.wikipedia.org/wiki/Transizione">   
+                            La <hi rend="bold">transizione</hi> è un periodo di cambiamenti storici e culturali; mutamento, modifica, cambiamento.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="connaissance" xml:lang="fr">Connaissance</term>
+                        <term ref="#connaissance" xml:lang="it">Conoscenza</term>
+                    </label>
+                        <item>
+                        <gloss target="#connaissance" xml:lang="it" source="https://it.wikipedia.org/wiki/Conoscenza">   
+                            <hi rend="bold">Conoscenza</hi> significa consapevolezza di informazioni, verità e fatti con l'esperienza e l'apprendimento.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="fragmentaire" xml:lang="fr">Fragmentaire</term>
+                        <term ref="#fragmentaire" xml:lang="it">Frammentaria</term>
+                    </label>
+                        <item>
+                        <gloss target="#fragmentaire" xml:lang="it" source="https://it.wikipedia.org/wiki/Frammentario">   
+                            <hi rend="bold">Frammentario</hi>: incompleto.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="connaissons" xml:lang="fr">Connaissons</term>
+                        <term ref="#connaissons" xml:lang="it">Conosciamo</term>
+                    </label>
+                        <item>
+                        <gloss target="#connaissons" xml:lang="it" source="https://it.wikipedia.org/wiki/Conoscere">   
+                            Da <hi rend="bold">conoscere</hi>: avere esperienza o totale cognizione di qualcosa.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="corps" xml:lang="fr">Corps</term>
+                        <term ref="#corps" xml:lang="it">Nucleo centrale</term>
+                    </label>
+                        <item>
+                        <gloss target="#corps" xml:lang="it" source="https://it.wikipedia.org/wiki/Nucleo">   
+                            <hi rend="bold">Nucleo</hi>: base, fondamento, cardine.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="langill" xml:lang="fr">Langue illyrien</term>
+                        <term ref="#langill" xml:lang="it">Illirico</term>
+                    </label>
+                        <item>
+                        <gloss target="#langill" xml:lang="it" source="https://it.wikipedia.org/wiki/Lingua_illirica">   
+                            L'<hi rend="bold">illirico</hi>  era una lingua indoeuropea parlata nella parte occidentale della Penisola balcanica fino ai primi secoli del I millennio d.C.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="langphy" xml:lang="fr">Langue phrygien</term>
+                        <term ref="#langphy" xml:lang="it">Frigio</term>
+                    </label>
+                        <item>
+                        <gloss target="#langphy" xml:lang="it" source="https://it.wikipedia.org/wiki/Lingua_frigia">   
+                            Il <hi rend="bold">frigio</hi> è una lingua indoeuropea estinta, parlata anticamente dai Frigi.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="langmac" xml:lang="fr">Langue macédonien</term>
+                        <term ref="#langmac" xml:lang="it">Macedone</term>
+                    </label>
+                    <item>
+                        <gloss target="#langmac" xml:lang="it" source="https://it.wikipedia.org/wiki/Lingua_macedone">   
+                            Il <hi rend="bold">macedone</hi> è una lingua slava meridionale parlata in Macedonia del Nord.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="populations" xml:lang="fr">Populations</term>
+                        <term ref="#populations" xml:lang="it">Popolazioni</term>
+                    </label>
+                    <item>
+                        <gloss target="#populations" xml:lang="it" source="https://it.wikipedia.org/wiki/Popolazione">   
+                        Una <hi rend="bold">popolazione</hi> è l'insieme delle persone che vivono in uno stesso territorio.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="continuellement" xml:lang="fr">Continuellement</term>
+                        <term ref="#continuellement" xml:lang="it">Con continuità</term>
+                    </label>
+                    <item>
+                        <gloss target="#continuellement" xml:lang="it" source="https://it.wiktionary.org/wiki/continuit%C3%A0">   
+                        Da <hi rend="bold">continuità</hi>: assenza di meccanicismo forzato e di necessità di tecnicismi, bensì libertà in pienezza esistenziale.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="typesint" xml:lang="fr">Types intermédiaires</term>
+                        <term ref="#typesint" xml:lang="it">Tipi intermedi</term>
+                    </label>
+                    <item>
+                        <gloss target="#typesint" xml:lang="it" source="https://www.treccani.it/vocabolario/intermedio/">   
+                        <hi rend="bold">Intermedio</hi>: che sta in mezzo, che è posto tra due cose, tra due limiti di spazio o di tempo, o tra due possibilità.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="diff" xml:lang="fr">Differenciation</term>
+                        <term ref="#diff" xml:lang="it">Differenziazione</term>
+                    </label>
+                    <item>
+                        <gloss target="#diff" xml:lang="it" source="https://it.wiktionary.org/wiki/differenziazione">   
+                        <hi rend="bold">Differenziazione</hi>: acquisizione di tratti distintivi.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="langlat" xml:lang="fr">Langue latine</term>
+                        <term ref="#langlat" xml:lang="it">Lingua latina</term>
+                    </label>
+                    <item>
+                        <gloss target="#langlat" xml:lang="it" source="https://it.wikipedia.org/wiki/Lingua_latina">   
+                        Il latino o <hi rend="bold">lingua latina</hi> è una lingua indoeuropea appartenente al gruppo delle lingue latino-falische.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="continuite" xml:lang="fr">Continuité</term>
+                        <term ref="#continuite" xml:lang="it">Continuità</term>
+                    </label>
+                    <item>
+                        <gloss target="#continuite" xml:lang="it" source="https://it.wiktionary.org/wiki/continuit%C3%A0">   
+                        <hi rend="bold">Continuità</hi>: assenza di meccanicismo forzato e di necessità di tecnicismi, bensì libertà in pienezza esistenziale.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="difflang" xml:lang="fr">Différentes langues</term>
+                        <term ref="#difflang" xml:lang="it">Differenti lingue</term>
+                    </label>
+                    <item>
+                        <gloss target="#difflang" xml:lang="it" source="https://www.treccani.it/vocabolario/differente/">   
+                        <hi rend="bold">Differente</hi>: che ha natura o qualità dissimili da quelle di un altro oggetto o persona con cui è confrontato.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="represente" xml:lang="fr">Représente</term>
+                        <term ref="#represente" xml:lang="it">Rappresenta</term>
+                    </label>
+                    <item>
+                        <gloss target="#represente" xml:lang="it" source="https://www.it.wiktionary.org/wiki/rappresentare">   
+                        Da <hi rend="bold">rappresentare</hi>: simboleggiare, esprimere, significare (sinonimi).
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="anninterm" xml:lang="fr">Anneau intermédiaire</term>
+                        <term ref="#anninterm" xml:lang="it">Anello intermedio</term>
+                    </label>
+                    <item>
+                        <gloss target="#anninterm" xml:lang="it" source="https://dizionari.repubblica.it/Italiano/A/anello.html">   
+                        <hi rend="bold">Anello</hi> di congiunzione, organismo <hi rend="bold">intermedio</hi> tra due gerarchie sistematiche.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="phenomenes" xml:lang="fr">Phénomènes</term>
+                        <term ref="#phenomenes" xml:lang="it">Fenomeni</term>
+                    </label>
+                    <item>
+                        <gloss target="#phenomenes" xml:lang="it" source="https://it.wiktionary.org/wiki/fenomeno">   
+                        <hi rend="bold">Fenomeno</hi>: quanto è oggetto di studio e/o ricerca.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="analogues" xml:lang="fr">Analogues</term>
+                        <term ref="#analogues" xml:lang="it">Analoghi</term>
+                    </label>
+                    <item>
+                        <gloss target="#analogues" xml:lang="it" source="https://it.wiktionary.org/wiki/analogo">   
+                        <hi rend="bold">Analogo</hi>: che ha rapporto di proporzione e somiglianza con un'altra cosa.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="diverg" xml:lang="fr">Divergences</term>
+                        <term ref="#diverg" xml:lang="it">Divergenze</term>
+                    </label>
+                    <item>
+                        <gloss target="#diverg" xml:lang="it" source="https://it.wiktionary.org/wiki/divergenza">   
+                        Da <hi rend="bold">divergere</hi>, ovvero lo scostamento di due entità che hanno un unico punto di origine.
+                        </gloss>
+                    </item>
+
+                    <label>
+                        <term xml:id="phonetique" xml:lang="fr">Phonétique</term>
+                        <term ref="#phonetique" xml:lang="it">Fonetica</term>
+                    </label>
+                    <item>
+                        <gloss target="#phonetique" xml:lang="it" source="https://it.wiktionary.org/wiki/fonetica">   
+                        <hi rend="bold">Fonetica</hi>, in linguistica, è la scienza che studia la corretta pronuncia delle parole.
+                        </gloss>
+                    </item>
+                </list>   
+
+                <!--lista di citazioni bibliografiche di vario genere-->
+                <listBibl xml:id="prolusioni3_bibliography">
+                    <head>Bibliography</head>
+                    <!--Bouquet-Engler 2002-->
+                    <!--bibl contiene la citazione bibliografica strutturata liberamente-->
+                    <bibl xml:id="Edizione-Bouquet-Engler-2002"> 
+                        <title xml:lang="fr">Écrits de linguistique générale</title>
+                        <author>
+                            <persName ref="#FDS">
+                                <forename>Ferdinand</forename> 
+                                <surname>de Saussure</surname>
+                            </persName>
+                        </author>
+                        <author>
+                            <!--come specifica il documento riguardo a questa ricostruzione delle lezioni in "studi critici"-->
+                            <persName ref="#Bou">
+                                <forename>Simon</forename>
+                                <surname>Bouquet</surname>
+                            </persName>
+                        </author>
+                        <author>
+                            <persName ref="#Eng">
+                                <forename>Rudolf</forename>
+                                <surname>Engler</surname>
+                            </persName>
+                        </author>
+                        <!--https://www.worldcat.org/it/title/ecrits-de-linguistique-generale/oclc/464976878 url a cui si trova anche questa autrice
+                        per gli ecrits de linguistique general edizione Bouquet Engler-->
+                        <author>
+                            <persName ref="#AW">
+                                <forename>Antoinette</forename>
+                                <surname>Weil</surname>
+                            </persName>
+                        </author>
+
+                        <!--contiene il luogo di pubblicazione di un'unità bibliografica-->
+                        <pubPlace ref="#PR">Paris</pubPlace>
+                        <publisher xml:lang="fr">Éditionds Gallimard</publisher>
+                        <date when="2002"> 2002</date>
+                        <idno type="URI">https://www.worldcat.org/it/title/ecrits-de-linguistique-generale/oclc/464976878</idno>
+                        <idno type="ISBN">9782070761166 </idno>
+                        <idno type="OCLC">464976878</idno>
+                        <biblScope unit="page" from="143" to="172">143-172</biblScope>  
+                        <note xml:lang="it">
+                            Si tratta della trascrizione in francese del manoscritto di  <persName ref="FDS"> F. de Saussure</persName>
+                        </note>
+                    </bibl>
+            
+                    <bibl xml:id="Traduzione-E-Fadda-2006">
+                        <!--<editor role="principal"> è la dichiarazione di responsabilità secondaria di un curatore-->
+                        <title xml:lang="it">Lingua e mente sociale: per una teoria delle istituzioni linguistiche a partire da Saussure e Mead </title>
+                        <editor role="editor-translator">
+                            <persName ref="#EF">
+                                <forename>Emanuele</forename>
+                                <surname>Fadda</surname>
+                            </persName>
+                        </editor>
+                        <!--</editor>-->
+                        <date when="2006">2006</date>
+                        <pubPlace>
+                            <placeName ref="#ARC"> 
+                                <settlement type="city">Acireale</settlement>, <region>Catania</region>
+                            </placeName>
+                        </pubPlace>
+                        <publisher>Bonanno Editore</publisher>
+                        <date when="2006">2006</date>
+                        <idno type="ISBN">9788877962768</idno>
+                        <idno type="OCLC">878630533</idno>
+                        <!--Url del libro di fadda 2006-->
+                        <idno type="URI">https://www.worldcat.org/it/title/878630533</idno>
+                        <biblScope unit="page" from="85" to="121">85-121</biblScope>
+                        <note xml:lang="it">
+                            Si tratta della traduzione in italiano del manoscritto di  <persName ref="FDS"> F. de Saussure</persName> dal francese.
+                        </note>
+                    </bibl>
+
+                    <bibl xml:id="Ricostruzione-testo-Chidichimo-2009">
+                        <title xml:lang="fr">LES PREMIÈRES LEÇONS DE SAUSSURE A GENÈVE, 1891: TEXTES, TÉMOINS, MANUSCRITS</title>
+                        <editor>
+                            <persName ref="#AC">
+                            <forename>Alessandro</forename>
+                            <surname>Chidichimo</surname>
+                            </persName>
+                        </editor>
+                        
+                        <pubPlace>
+                            <placeName ref="#SV"> Svizzera</placeName>
+                        </pubPlace>
+                        <publisher>Libraire Droz</publisher>
+                        <date when="2009"> 2009</date>
+                        <idno type="ISSN">0068-516X</idno>
+                        <idno type="OCLC">5790785687</idno>
+                        <!--Url del libro di fadda 2006, fadda 2006 saussure-->
+                        <idno type="URI">https://www.worldcat.org/it/title/5790785687</idno>
+                        <idno type="URI">https://www.jstor.org/stable/41427851?seq=7#metadata_info_tab_contents</idno>
+                        <biblScope unit="page" from="257" to="277">257-277</biblScope>
+                        <note xml:lang="it">
+                            Le lezioni ricostruite da <persName ref="#AC">Alessandro Chidichimo</persName> sono state pubblicate sulla rivista "quaderni di 
+                            <persName ref="#FDS"> F. de Saussure</persName> ".
+                        </note>
+                    </bibl>
+
+                    <bibl xml:id="Studi-Critici-AAVV">
+                        <title type="main" xml:lang="fr">Cahiers Ferdinand de Saussure</title>
+                        <title type="sub" xml:lang="fr">Sur Saussure à Genève en 1891</title>
+                        <author ref="#FDS">
+                            <forename>Ferdinand</forename>
+                            <surname>De Saussure</surname>
+                        </author>
+                        <author xml:id="AAVV">AA. VV. - Autori Vari</author>
+                        <citedRange unit="page" from="217" to="312">217-312</citedRange> 
+                    </bibl>
+
+                    <bibl xml:id="Tullio-De-Mauro-1976">
+                        <title>Corso di linguistica generale</title>
+                        <author ref="#FDS">
+                            <forename>Ferdinand</forename>
+                            <surname>De Saussure</surname>
+                        </author>
+                        <author ref="#TDM">
+                            <forename>Tullio</forename>
+                            <surname>De Mauro</surname>
+                        </author>
+                        <date when="1976">1976</date>
+                        <note>
+                            <p><hi rend="bold">Tullio de Mauro</hi> è responsabile di traduzione commento e note.</p>
+                        </note>
+                    </bibl>
+                </listBibl>
+
+                <listPlace>
+                    <head>Places</head> 
+
+                    <place xml:id="GE">
+                        <placeName ref="https://it.wikipedia.org/wiki/Ginevra">Ginevra</placeName>
+                        <country>Svizzera</country>
+                    </place>
+
+                    <place xml:id="PI">
+                        <placeName ref="https://it.wikipedia.org/wiki/Pisa">Pisa</placeName>
+                        <country>Italia</country>
+                    </place>
+
+                    <place xml:id="PR">
+                        <placeName ref="https://it.wikipedia.org/wiki/Parigi">Parigi</placeName>
+                        <country>Francia</country>
+                    </place>
+
+                    <place xml:id="ARC">
+                        <placeName ref="https://it.wikipedia.org/wiki/Ginevra">Arcireale</placeName>
+                        <country>Italia</country>
+                    </place>
+
+                </listPlace>
+                
+                <!--(elenco delle persone) contiene una lista di descrizioni, 
+                ciascuna delle quali fornisce informazioni relative a una persona specifica o a un gruppo di persone, per esempio i partecipanti a un'interazione verbale o le persone identificate da una fonte storica-->
+                <listPerson>
+                    <head>People</head>
+                    <person xml:id="FDS">
+                        <persName ref="https://www.worldcat.org/identities/viaf-8291159248237604870007/">
+                            <forename>Ferdinand</forename>
+                            <surname>De Saussure</surname>
+                        </persName>
+                        <note> 
+                        È stato un linguista e semiologo svizzero, considerato fondatore della linguistica moderna, della branca che si occupa dello studio dei segni: strutturalismo.
+                        </note>
+                        <birth>
+                            <date when="26-11-1857">26 novembre 1857</date>
+                            <settlement type="city">Ginevra</settlement>
+                        </birth>
+                        <death>
+                            <date when="22-02-1913">22 febbraio 1913</date>
+                            <settlement type="city">Vufflens-le Château</settlement>
+                        </death>
+                    </person>
+
+                    <person xml:id="EF">
+                        <persName ref="http://worldcat.org/identities/lccn-no2011183289/">
+                            <forename>Emanuele</forename>
+                            <surname>Fadda</surname>
+                        </persName>
+                        <birth>
+                            <date when="1972">1972</date>
+                            <settlement type="city">Cagliari</settlement>
+                        </birth>
+                    </person>
+
+                    <person xml:id="Bou">
+                        <persName ref="https://www.worldcat.org/identities/lccn-n97102757/">
+                            <forename>Simon</forename>
+                            <surname>Bouquet</surname>
+                        </persName>
+                        <birth>
+                            <date when="1954">1954</date>
+                        </birth>
+                    </person>
+
+                    <person xml:id="Eng">
+                        <persName ref="http://worldcat.org/identities/lccn-nr89013033/">
+                            <forename>Rudolf</forename>
+                            <surname>Engler</surname>
+                        </persName>
+                        <birth>
+                            <date when="1972">1930</date>
+                        </birth>
+                        <death>
+                            <date when="2003">2003</date>
+                        </death>
+                    </person>
+
+                    <person xml:id="AW">
+                        <persName ref="http://worldcat.org/identities/lccn-nr2002015108/">
+                            <forename>Antoinette</forename>
+                            <surname>Weil</surname>
+                        </persName>
+                        <birth><date when="1972">1972</date></birth>
+                    </person>
+
+                    <person xml:id="AC">
+                        <persName ref="https://it.wikipedia.org/wiki/Emanuele_Fadda">
+                            <forename>Emanuele</forename>
+                            <surname>Fadda</surname>
+                        </persName>
+                        <birth><date when="1972">1972</date></birth>
+                    </person>
+
+                    <person xml:id="TDM">
+                        <persName ref="https://it.wikipedia.org/wiki/Emanuele_Fadda">
+                            <forename>Emanuele</forename>
+                            <surname>Fadda</surname>
+                        </persName>
+                        <birth><date when="1972">1972</date></birth>
+                    </person>
+
+                </listPerson>
+            </div>
+        </back>
+    </text>
+</TEI>
